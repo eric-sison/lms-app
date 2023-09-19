@@ -15,11 +15,15 @@ import {
   TrainingSidebarItemIcon,
 } from "./SidebarMenuItemIcons";
 import { SidebarMenuGroup } from "./SidebarMenuGroup";
+import { SidebarCardHeader } from "./SidebarCardHeader";
 
 export const Sidebar: FunctionComponent = () => {
   return (
     <aside className="w-72 shrink-0 h-full bg-dark-primary dark:bg-dark-secondary">
-      <section className="mt-10"></section>
+      <section className="mt-10 px-4">
+        <SidebarCardHeader />
+      </section>
+
       <ul role="menu" className="px-4 space-y-1">
         <SidebarMenuItem
           icon={<DashboardSidebarItemIcon />}

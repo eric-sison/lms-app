@@ -42,7 +42,7 @@ export const SidebarMenuItem: FunctionComponent<SidebarMenuItemProps> = ({
 
         <button className="flex items-center gap-4 w-full py-2 pl-2">
           {icon}
-          <span className="text-zinc-300 tracking-wide font-medium">{label}</span>
+          <span className="text-zinc-300 tracking-wide">{label}</span>
         </button>
 
         {counter && <span className="text-zinc-400 text-sm font-medium">{counter}</span>}

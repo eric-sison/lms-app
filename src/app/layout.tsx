@@ -1,4 +1,4 @@
-import { MyThemeProvider } from "@lms/components/utils/MyThemeProvider";
+import { MyThemeProvider } from "@lms/components/providers/MyThemeProvider";
 import "../styles/tailwind.css";
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
