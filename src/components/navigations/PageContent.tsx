@@ -13,7 +13,7 @@ export const PageContent: FunctionComponent<PageContentProps> = ({ children }) =
     <div className="w-full h-screen flex overflow-hidden">
       <Sidebar />
 
-      <main className="bg-white dark:bg-dark-primary w-full flex flex-col overflow-y-auto">
+      <main className="bg-white dark:bg-dark-primary w-full flex-1 flex flex-col overflow-y-auto">
         <Topbar />
         <div className="flex-1">{children}</div>
       </main>

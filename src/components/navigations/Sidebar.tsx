@@ -18,7 +18,7 @@ import { SidebarCardHeader } from "./SidebarCardHeader";
 
 export const Sidebar: FunctionComponent = () => {
   return (
-    <aside className="w-0 md:w-0 lg:w-72 xl:w-72 shrink-0 h-full bg-dark-primary dark:bg-dark-secondary">
+    <aside className="w-0 md:w-0 lg:w-[17.5rem] xl:w-[17.5rem] shrink-0 h-full bg-dark-primary dark:bg-dark-secondary">
       <section className="mt-10 px-4">
         <SidebarCardHeader />
       </section>
