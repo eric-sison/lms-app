@@ -1,4 +1,4 @@
-import { PageLayout } from "@lms/components/layouts/PageLayout";
+import { PageContent } from "@lms/components/navigations/PageContent";
 import { ReactNode } from "react";
 
 type MainLayoutProps = {
@@ -6,5 +6,5 @@ type MainLayoutProps = {
 };
 
 export default function MainLayout({ children }: MainLayoutProps) {
-  return <PageLayout>{children}</PageLayout>;
+  return <PageContent>{children}</PageContent>;
 }

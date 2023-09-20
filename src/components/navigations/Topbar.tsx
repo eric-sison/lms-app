@@ -9,8 +9,8 @@ export const Topbar: FunctionComponent = () => {
   };
 
   return (
-    <nav className="h-[4.5rem] bg-white border-b flex items-center justify-between px-28 dark:bg-dark-secondary dark:border-b-zinc-700">
-      <section className="text-gray-700 dark:text-zinc-100">logo</section>
+    <nav className="h-[4.5rem] bg-white flex items-center justify-between px-10 dark:bg-dark-primary py-2">
+      <section className="text-gray-700 dark:text-zinc-100"></section>
       <section className="flex items-center gap-4">
         <ul className="flex items-center gap-2">
           <li role="menuitem">
@@ -18,8 +18,8 @@ export const Topbar: FunctionComponent = () => {
               {theme === "light" ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="1.7em"
-                  height="1.7em"
+                  width="1.5em"
+                  height="1.5em"
                   viewBox="0 0 24 24"
                   className="text-gray-700 dark:text-zinc-100"
                 >
@@ -33,8 +33,8 @@ export const Topbar: FunctionComponent = () => {
               ) : (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="1.7em"
-                  height="1.7em"
+                  width="1.5em"
+                  height="1.5em"
                   viewBox="0 0 24 24"
                   className="text-gray-700 dark:text-zinc-100"
                 >
@@ -53,8 +53,8 @@ export const Topbar: FunctionComponent = () => {
             <TopbarMenuItemButton>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="1.7em"
-                height="1.7em"
+                width="1.5em"
+                height="1.5em"
                 viewBox="0 0 24 24"
                 className="text-gray-700 dark:text-zinc-100"
               >
