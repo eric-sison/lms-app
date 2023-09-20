@@ -4,8 +4,8 @@ export const DashboardSidebarItemIcon: FunctionComponent = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="1.5em"
-      height="1.5em"
+      width="1.25em"
+      height="1.25em"
       viewBox="0 0 24 24"
       className="text-zinc-300"
     >
@@ -21,8 +21,8 @@ export const TrainingSidebarItemIcon: FunctionComponent = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="1.5em"
-      height="1.5em"
+      width="1.25em"
+      height="1.25em"
       viewBox="0 0 24 24"
       className="text-zinc-300"
     >
@@ -38,8 +38,8 @@ export const ScheduleSidebarItemIcon: FunctionComponent = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="1.5em"
-      height="1.5em"
+      width="1.25em"
+      height="1.25em"
       viewBox="0 0 24 24"
       className="text-zinc-300"
     >
@@ -55,8 +55,8 @@ export const FilesSidebarItemIcon: FunctionComponent = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="1.5em"
-      height="1.5em"
+      width="1.25em"
+      height="1.25em"
       viewBox="0 0 24 24"
       className="text-zinc-300"
     >
@@ -90,14 +90,14 @@ export const CourseMaterialsSidebarItemIcon: FunctionComponent = () => {
       width="1.5em"
       height="1.5em"
       viewBox="0 0 24 24"
-      className="text-zinc-300"
+      className="text-amber-500"
     >
-      <g fill="none" stroke="currentColor" strokeWidth="1.5">
+      <g fill="currentColor">
+        <path d="M18 10.853V6h-4v4.853c0 .29 0 .435.095.494c.095.058.224-.007.484-.136l1.242-.622c.088-.043.132-.065.179-.065c.047 0 .091.022.179.065l1.242.622c.26.13.39.194.484.136c.095-.06.095-.204.095-.494Z"></path>
         <path
-          d="M18 6v4.853c0 .29 0 .435-.095.494c-.095.058-.224-.007-.484-.136l-1.242-.622c-.088-.043-.132-.065-.179-.065c-.047 0-.091.022-.179.065l-1.242.622c-.26.13-.39.194-.484.136c-.095-.06-.095-.204-.095-.494V6"
+          d="M2 6.95c0-.883 0-1.324.07-1.692A4 4 0 0 1 5.257 2.07C5.626 2 6.068 2 6.95 2c.386 0 .58 0 .766.017a4 4 0 0 1 2.18.904c.144.119.28.255.554.529L11 4c.816.816 1.224 1.224 1.712 1.495a4 4 0 0 0 .848.352C14.098 6 14.675 6 15.828 6h.374c2.632 0 3.949 0 4.804.77c.079.07.154.145.224.224c.77.855.77 2.172.77 4.804V14c0 3.771 0 5.657-1.172 6.828C19.657 22 17.771 22 14 22h-4c-3.771 0-5.657 0-6.828-1.172C2 19.657 2 17.771 2 14V6.95Z"
           opacity=".5"
         ></path>
-        <path d="M2 6.95c0-.883 0-1.324.07-1.692A4 4 0 0 1 5.257 2.07C5.626 2 6.068 2 6.95 2c.386 0 .58 0 .766.017a4 4 0 0 1 2.18.904c.144.119.28.255.554.529L11 4c.816.816 1.224 1.224 1.712 1.495a4 4 0 0 0 .848.352C14.098 6 14.675 6 15.828 6h.374c2.632 0 3.949 0 4.804.77c.079.07.154.145.224.224c.77.855.77 2.172.77 4.804V14c0 3.771 0 5.657-1.172 6.828C19.657 22 17.771 22 14 22h-4c-3.771 0-5.657 0-6.828-1.172C2 19.657 2 17.771 2 14V6.95Z"></path>
       </g>
     </svg>
   );
@@ -107,8 +107,8 @@ export const FolderSidebarItemIcon: FunctionComponent = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="1.5em"
-      height="1.5em"
+      width="1.25em"
+      height="1.25em"
       viewBox="0 0 24 24"
       className="text-zinc-300"
     >
@@ -126,8 +126,8 @@ export const ProfileSidebarItemIcon: FunctionComponent = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="1.5em"
-      height="1.5em"
+      width="1.25em"
+      height="1.25em"
       viewBox="0 0 256 256"
       className="text-zinc-300"
     >
@@ -143,8 +143,8 @@ export const SettingsSidebarItemIcon: FunctionComponent = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="1.5em"
-      height="1.5em"
+      width="1.25em"
+      height="1.25em"
       viewBox="0 0 24 24"
       className="text-zinc-300"
     >
@@ -163,15 +163,11 @@ export const CertificateSidebarItemIcon: FunctionComponent = () => {
       width="1.5em"
       height="1.5em"
       viewBox="0 0 24 24"
-      className="text-zinc-300"
+      className="text-green-600"
     >
-      <g fill="none" stroke="currentColor" strokeWidth="1.5">
-        <circle cx="12" cy="9" r="7"></circle>
-        <path
-          strokeLinecap="round"
-          d="m7.351 15l-.637 2.323c-.628 2.292-.942 3.438-.523 4.065c.147.22.344.396.573.513c.652.332 1.66-.193 3.675-1.243c.67-.35 1.006-.524 1.362-.562a1.87 1.87 0 0 1 .398 0c.356.038.691.213 1.362.562c2.015 1.05 3.023 1.575 3.675 1.243c.229-.117.426-.293.573-.513c.42-.627.105-1.773-.523-4.065L16.649 15"
-          opacity=".5"
-        ></path>
+      <g fill="currentColor">
+        <circle cx="12" cy="9" r="7" opacity=".5"></circle>
+        <path d="m7.546 14.4l-.195.6l-.637 2.323c-.628 2.292-.942 3.438-.523 4.065c.147.22.344.396.573.513c.652.332 1.66-.193 3.675-1.243c.67-.35 1.006-.524 1.362-.562c.133-.014.265-.014.398 0c.356.038.691.212 1.362.562c2.015 1.05 3.023 1.575 3.675 1.243c.229-.117.426-.293.573-.513c.42-.627.105-1.773-.523-4.065L16.649 15l-.195-.6c-1.21 1-2.762 1.6-4.454 1.6c-1.692 0-3.244-.6-4.454-1.6Z"></path>
       </g>
     </svg>
   );
@@ -184,15 +180,16 @@ export const TrainingReportsSidebarItemIcon: FunctionComponent = () => {
       width="1.5em"
       height="1.5em"
       viewBox="0 0 24 24"
-      className="text-zinc-300"
+      className="text-indigo-600"
     >
-      <g fill="none" stroke="currentColor" strokeWidth="1.5">
+      <g fill="currentColor">
         <path
-          strokeLinecap="round"
-          d="M22 10.5V12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12s0-7.071 1.464-8.536C4.93 2 7.286 2 12 2h1.5"
+          fillRule="evenodd"
+          d="M14 22h-4c-3.771 0-5.657 0-6.828-1.172C2 19.657 2 17.771 2 14v-4c0-3.771 0-5.657 1.172-6.828C4.343 2 6.239 2 10.03 2c.606 0 1.091 0 1.5.017c-.013.08-.02.161-.02.244l-.01 2.834c0 1.097 0 2.067.105 2.848c.114.847.375 1.694 1.067 2.386c.69.69 1.538.952 2.385 1.066c.781.105 1.751.105 2.848.105h4.052c.043.534.043 1.19.043 2.063V14c0 3.771 0 5.657-1.172 6.828C19.657 22 17.771 22 14 22Z"
+          clipRule="evenodd"
           opacity=".5"
         ></path>
-        <circle cx="19" cy="5" r="3"></circle>
+        <path d="m11.51 2.26l-.01 2.835c0 1.097 0 2.066.105 2.848c.114.847.375 1.694 1.067 2.385c.69.691 1.538.953 2.385 1.067c.781.105 1.751.105 2.848.105h4.052c.013.155.022.321.028.5H22c0-.268 0-.402-.01-.56a5.322 5.322 0 0 0-.958-2.641c-.094-.128-.158-.204-.285-.357C19.954 7.494 18.91 6.312 18 5.5c-.81-.724-1.921-1.515-2.89-2.162c-.832-.555-1.248-.833-1.819-1.04a5.488 5.488 0 0 0-.506-.153c-.384-.095-.758-.128-1.285-.14l.01.255Z"></path>
       </g>
     </svg>
   );

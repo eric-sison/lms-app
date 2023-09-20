@@ -40,6 +40,13 @@ export const Sidebar: FunctionComponent = () => {
         />
 
         <SidebarMenuItem
+          icon={<FilesSidebarItemIcon />}
+          path="/folders"
+          label="My Files"
+          counter={undefined}
+        />
+
+        <SidebarMenuItem
           icon={<TrainingSidebarItemIcon />}
           path="/trainings"
           label="Trainings"
@@ -54,20 +61,13 @@ export const Sidebar: FunctionComponent = () => {
         />
 
         <SidebarMenuItem
-          icon={<FilesSidebarItemIcon />}
-          path="/folders"
-          label="My Files"
-          counter={undefined}
-        />
-
-        <SidebarMenuItem
           icon={<SettingsSidebarItemIcon />}
           path="/settings"
           label="Settings"
           counter={undefined}
         />
 
-        <SidebarMenuGroup header="Trainings">
+        {/* <SidebarMenuGroup header="Trainings">
           <SidebarMenuItem
             icon={
               <svg
@@ -139,7 +139,7 @@ export const Sidebar: FunctionComponent = () => {
             label="Completed"
             counter={16}
           />
-        </SidebarMenuGroup>
+        </SidebarMenuGroup> */}
 
         <SidebarMenuGroup header="Requirements">
           <SidebarMenuItem
