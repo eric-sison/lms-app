@@ -19,8 +19,8 @@ export const TrainingCardClassic: FunctionComponent<TrainingCardProps> = ({
   const { image, title, source, details, tag } = training;
 
   return (
-    <div className="group max-w-full xl:max-w-xl border-zinc-200 bg-white dark:border-transparent rounded-lg dark:bg-transparent overflow-clip">
-      <header className="h-32 border-b border-b-zinc-100 group dark:border-b-transparent overflow-clip relative">
+    <div className="group max-w-full xl:max-w-xl border-zinc-200 bg-white rounded-lg dark:bg-transparent overflow-clip">
+      <header className="h-32 border-b border-b-zinc-100 group dark:border-b-transparent overflow-clip relative rounded-lg">
         <TrainingCardContext.Provider value={{ source }}>
           <TrainingCardImageOverlay />
         </TrainingCardContext.Provider>
@@ -49,7 +49,7 @@ export const TrainingCardClassic: FunctionComponent<TrainingCardProps> = ({
             <Link
               title={title}
               href="/trainings/details"
-              className="text-xl font-bold leading-6 hover:underline text-white dark:text-zinc-200 line-clamp-2"
+              className="text-xl font-bold leading-6 hover:underline text-white dark:text-zinc-200 line-clamp-2 pr-3"
             >
               {title}
             </Link>
