@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function LoadTrainingPage() {
   return (
     <div>
-      <header className="h-24 border-b dark:border-b-zinc-700 flex flex-col px-10">
+      <header className="h-[5rem] border-b dark:border-b-zinc-700 flex flex-col px-10">
         <section className="flex-1">
           <div className="h-full flex items-end space-x-5">
             <section className="flex items-start">
