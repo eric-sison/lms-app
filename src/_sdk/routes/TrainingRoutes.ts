@@ -19,7 +19,8 @@ export class TrainingRoutes {
     return (await axios.get<Training[]>(`${url}`, config)).data;
   }
 
-  // async createTraining(options?: ApiConfig) {
-  //   return await axios.post('', options?.body, {})
-  // }
+  async getTrainingCountByFilter(options?: UrlOptions, config?: AxiosRequestConfig<any>) {
+    const url = this.sdkUtils.modifyUrl("trainings/count", options);
+    return (await axios.get<number>(`${url}`, config)).data;
+  }
 }
