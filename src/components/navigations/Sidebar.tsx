@@ -8,7 +8,6 @@ import {
   CourseMaterialsSidebarItemIcon,
   DashboardSidebarItemIcon,
   FilesSidebarItemIcon,
-  FolderSidebarItemIcon,
   ProfileSidebarItemIcon,
   SettingsSidebarItemIcon,
   TrainingReportsSidebarItemIcon,
@@ -19,7 +18,7 @@ import { SidebarCardHeader } from "./SidebarCardHeader";
 
 export const Sidebar: FunctionComponent = () => {
   return (
-    <aside className="w-72 shrink-0 h-full bg-dark-primary dark:bg-dark-secondary">
+    <aside className="w-0 md:w-0 lg:w-72 xl:w-72 shrink-0 h-full bg-dark-primary dark:bg-dark-secondary border-r dark:border-r-zinc-700">
       <section className="mt-10 px-4">
         <SidebarCardHeader />
       </section>
@@ -50,7 +49,7 @@ export const Sidebar: FunctionComponent = () => {
           icon={<TrainingSidebarItemIcon />}
           path="/trainings"
           label="Trainings"
-          counter={2}
+          counter={5}
         />
 
         <SidebarMenuItem
@@ -159,7 +158,7 @@ export const Sidebar: FunctionComponent = () => {
             icon={<CertificateSidebarItemIcon />}
             path={"/"}
             label={"Certificates"}
-            counter={1}
+            counter={12}
           />
         </SidebarMenuGroup>
       </ul>

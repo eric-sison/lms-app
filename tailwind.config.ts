@@ -14,6 +14,12 @@ const config: Config = {
         "dark-secondary": "#2C2C31",
         "dark-tertiary": "#36363A",
       },
+      aspectRatio: {
+        card: "1 / 1.3",
+      },
+      gridTemplateColumns: {
+        card: "repeat(auto-fill, minmax(500px, 1fr))",
+      },
     },
   },
   plugins: [],

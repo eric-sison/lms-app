@@ -87,8 +87,8 @@ export const CourseMaterialsSidebarItemIcon: FunctionComponent = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="1.5em"
-      height="1.5em"
+      width="1.25em"
+      height="1.25em"
       viewBox="0 0 24 24"
       className="text-amber-500"
     >
@@ -160,8 +160,8 @@ export const CertificateSidebarItemIcon: FunctionComponent = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="1.5em"
-      height="1.5em"
+      width="1.25em"
+      height="1.25em"
       viewBox="0 0 24 24"
       className="text-green-600"
     >
@@ -177,8 +177,8 @@ export const TrainingReportsSidebarItemIcon: FunctionComponent = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="1.5em"
-      height="1.5em"
+      width="1.25em"
+      height="1.25em"
       viewBox="0 0 24 24"
       className="text-indigo-600"
     >

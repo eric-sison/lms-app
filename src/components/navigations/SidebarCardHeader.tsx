@@ -9,7 +9,7 @@ export const SidebarCardHeader: FunctionComponent = () => {
         alt="profile"
         width={500}
         height={500}
-        className="inline-block h-12 w-12 rounded-full object-cover shrink-0 border-2"
+        className="inline-block h-12 w-12 rounded-full object-cover shrink-0 border-4"
       />
 
       <section className="leading-5 w-44">
