@@ -12,7 +12,7 @@ export const Topbar: FunctionComponent = () => {
     <nav className="h-[4.5rem] bg-white flex items-center justify-between px-10 dark:bg-dark-primary py-2">
       <section className="text-gray-700 dark:text-zinc-100"></section>
       <section className="flex items-center gap-4">
-        <ul className="flex items-center gap-2">
+        <ul className="flex items-center">
           <li role="menuitem">
             <TopbarMenuItemButton onClick={handleChangeTheme}>
               {theme === "light" ? (
@@ -21,14 +21,16 @@ export const Topbar: FunctionComponent = () => {
                   width="1.5em"
                   height="1.5em"
                   viewBox="0 0 24 24"
-                  className="text-gray-700 dark:text-zinc-100"
                 >
-                  <path
-                    fill="currentColor"
-                    fillRule="evenodd"
-                    d="M12.226 2.003a9.971 9.971 0 0 0-7.297 2.926c-3.905 3.905-3.905 10.237 0 14.142c3.905 3.905 10.237 3.905 14.142 0a9.972 9.972 0 0 0 2.926-7.297a10.037 10.037 0 0 0-.337-2.368a14.87 14.87 0 0 1-1.744 1.436c-1.351.949-2.733 1.563-3.986 1.842c-1.906.423-3.214.032-3.93-.684c-.716-.716-1.107-2.024-.684-3.93c.279-1.253.893-2.635 1.841-3.986c.415-.592.894-1.177 1.437-1.744a10.017 10.017 0 0 0-2.368-.337Zm5.43 15.654a7.964 7.964 0 0 0 2.251-4.438c-3.546 2.045-7.269 2.247-9.321.195c-2.052-2.052-1.85-5.775.195-9.321a8 8 0 1 0 6.876 13.564Z"
-                    clipRule="evenodd"
-                  />
+                  <g fill="currentColor">
+                    <path
+                      fillRule="evenodd"
+                      d="M22 12c0 5.523-4.477 10-10 10a9.986 9.986 0 0 1-3.321-.564A8.973 8.973 0 0 1 8 18a8.97 8.97 0 0 1 2.138-5.824A6.493 6.493 0 0 0 15.5 15a6.496 6.496 0 0 0 5.567-3.143c.24-.396.933-.32.933.143Z"
+                      clipRule="evenodd"
+                      opacity=".5"
+                    ></path>
+                    <path d="M2 12c0 4.359 2.789 8.066 6.679 9.435A8.973 8.973 0 0 1 8 18c0-2.221.805-4.255 2.138-5.824A6.47 6.47 0 0 1 9 8.5a6.496 6.496 0 0 1 3.143-5.567C12.54 2.693 12.463 2 12 2C6.477 2 2 6.477 2 12Z"></path>
+                  </g>
                 </svg>
               ) : (
                 <svg
@@ -36,14 +38,19 @@ export const Topbar: FunctionComponent = () => {
                   width="1.5em"
                   height="1.5em"
                   viewBox="0 0 24 24"
-                  className="text-gray-700 dark:text-zinc-100"
                 >
-                  <path
-                    fill="currentColor"
-                    fillRule="evenodd"
-                    d="M12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8Zm0 2a6 6 0 1 0 0-12a6 6 0 0 0 0 12ZM11 0h2v4.062a8.079 8.079 0 0 0-2 0V0ZM7.094 5.68L4.222 2.808L2.808 4.222L5.68 7.094A8.048 8.048 0 0 1 7.094 5.68ZM4.062 11H0v2h4.062a8.079 8.079 0 0 1 0-2Zm1.618 5.906l-2.872 2.872l1.414 1.414l2.872-2.872a8.048 8.048 0 0 1-1.414-1.414ZM11 19.938V24h2v-4.062a8.069 8.069 0 0 1-2 0Zm5.906-1.618l2.872 2.872l1.414-1.414l-2.872-2.872a8.048 8.048 0 0 1-1.414 1.414ZM19.938 13H24v-2h-4.062a8.069 8.069 0 0 1 0 2ZM18.32 7.094l2.872-2.872l-1.414-1.414l-2.872 2.872c.528.41 1.003.886 1.414 1.414Z"
-                    clipRule="evenodd"
-                  ></path>
+                  <g fill="currentColor">
+                    <path d="M17 12a5 5 0 1 1-10 0a5 5 0 0 1 10 0Z"></path>
+                    <path
+                      fillRule="evenodd"
+                      d="M12 1.25a.75.75 0 0 1 .75.75v2a.75.75 0 0 1-1.5 0V2a.75.75 0 0 1 .75-.75ZM1.25 12a.75.75 0 0 1 .75-.75h2a.75.75 0 0 1 0 1.5H2a.75.75 0 0 1-.75-.75Zm18 0a.75.75 0 0 1 .75-.75h2a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1-.75-.75ZM12 19.25a.75.75 0 0 1 .75.75v2a.75.75 0 0 1-1.5 0v-2a.75.75 0 0 1 .75-.75Z"
+                      clipRule="evenodd"
+                    ></path>
+                    <path
+                      d="M3.67 3.716a.75.75 0 0 1 1.059-.048L6.95 5.7a.75.75 0 0 1-1.012 1.107L3.717 4.775a.75.75 0 0 1-.048-1.06Zm16.662 0a.75.75 0 0 1-.047 1.06l-2.223 2.03A.75.75 0 1 1 17.05 5.7l2.222-2.032a.75.75 0 0 1 1.06.048Zm-3.306 13.309a.75.75 0 0 1 1.06 0l2.223 2.222a.75.75 0 1 1-1.061 1.06l-2.222-2.222a.75.75 0 0 1 0-1.06Zm-10.051 0a.75.75 0 0 1 0 1.06l-2.222 2.223a.75.75 0 0 1-1.06-1.06l2.222-2.223a.75.75 0 0 1 1.06 0Z"
+                      opacity=".5"
+                    ></path>
+                  </g>
                 </svg>
               )}
             </TopbarMenuItemButton>
@@ -52,6 +59,20 @@ export const Topbar: FunctionComponent = () => {
           <li role="menuitem">
             <TopbarMenuItemButton>
               <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1.25em"
+                height="1.25em"
+                viewBox="0 0 24 24"
+              >
+                <g fill="currentColor">
+                  <path
+                    d="M22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12s0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12Z"
+                    opacity=".5"
+                  ></path>
+                  <path d="M22 5a3 3 0 1 1-6 0a3 3 0 0 1 6 0Z"></path>
+                </g>
+              </svg>
+              {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="1.5em"
                 height="1.5em"
@@ -64,11 +85,11 @@ export const Topbar: FunctionComponent = () => {
                   d="M14 3v.29c2.892.86 5 3.539 5 6.71v7h1v2H4v-2h1v-7a7.003 7.003 0 0 1 5-6.71V3a2 2 0 1 1 4 0ZM7 17h10v-7a5 5 0 0 0-10 0v7Zm7 4v-1h-4v1a2 2 0 1 0 4 0Z"
                   clipRule="evenodd"
                 ></path>
-              </svg>
+              </svg> */}
             </TopbarMenuItemButton>
           </li>
         </ul>
-        <button className="bg-indigo-500 h-10 w-10 flex items-center justify-center rounded-full">
+        <button className="bg-indigo-500 h-10 w-10 flex items-center justify-center rounded-md">
           <span className="text-white font-bold">ES</span>
         </button>
       </section>
@@ -76,18 +97,19 @@ export const Topbar: FunctionComponent = () => {
   );
 };
 
-const TopbarMenuItemButton = forwardRef<HTMLButtonElement, ButtonHTMLAttributes<HTMLButtonElement>>(
-  ({ children, className, ...props }, ref) => {
-    return (
-      <button
-        ref={ref}
-        {...props}
-        className={`${className} h-12 w-12 flex items-center justify-center rounded-full border-2 border-transparent hover:border-gray-200 p-[0.4rem] focus:ring-4 focus:ring-indigo-100 focus:border-indigo-500 dark:ring-indigo-400 dark:focus:border-transparent dark:hover:border-gray-800 outline-none`}
-      >
-        {children}
-      </button>
-    );
-  }
-);
+const TopbarMenuItemButton = forwardRef<
+  HTMLButtonElement,
+  ButtonHTMLAttributes<HTMLButtonElement>
+>(({ children, className, ...props }, ref) => {
+  return (
+    <button
+      ref={ref}
+      {...props}
+      className={`${className} h-10 w-10 flex items-center justify-center rounded-full border-2 border-transparent hover:border-gray-200 p-[0.4rem] focus:ring-4 focus:ring-indigo-100 focus:border-indigo-500 dark:ring-indigo-400 dark:focus:border-transparent dark:hover:border-gray-800 outline-none`}
+    >
+      {children}
+    </button>
+  );
+});
 
 TopbarMenuItemButton.displayName = "TopbarMenuItemButton";

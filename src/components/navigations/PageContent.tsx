@@ -14,7 +14,7 @@ export const PageContent: FunctionComponent<PageContentProps> = ({ children }) =
       <Sidebar />
 
       <main className="bg-white dark:bg-dark-primary w-full flex-1 flex flex-col overflow-y-auto">
-        <Topbar />
+        {/* <Topbar /> */}
         <div className="flex-1">{children}</div>
       </main>
     </div>

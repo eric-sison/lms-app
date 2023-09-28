@@ -2,12 +2,10 @@ import { MyThemeProvider } from "@lms/components/providers/MyThemeProvider";
 import "../styles/tailwind.css";
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
+import { MyQueryProvider } from "@lms/components/providers/MyQueryProvider";
+import { MyLmsClientProvider } from "@lms/components/providers/MyLmsClientProvider";
 
 const inter = Inter({ subsets: ["latin"] });
-// const poppins = Poppins({
-//   subsets: ["latin"],
-//   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-// });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +16,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <MyThemeProvider>{children}</MyThemeProvider>
+        <MyThemeProvider>
+          <MyLmsClientProvider>
+            <MyQueryProvider>{children}</MyQueryProvider>
+          </MyLmsClientProvider>
+        </MyThemeProvider>
       </body>
     </html>
   );

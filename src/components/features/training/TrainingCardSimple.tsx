@@ -2,66 +2,86 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FunctionComponent, createContext, useContext } from "react";
-import { useSliderOver } from "../primitives/SliderOver";
+import { FunctionComponent, createContext, useContext, useEffect } from "react";
+import { Training } from "@lms/types/training";
 
 type TrainingCardProps = {
-  image?: string;
-  title: string;
-  details?: string;
-  tag: string;
-  source: string;
+  training: Training;
 };
 
-type TrainingCardContextState = Pick<TrainingCardProps, "source" | "title">;
+type TrainingCardContextState = Pick<Training, "source" | "title">;
 
 const TrainingCardContext = createContext<TrainingCardContextState>({ source: "", title: "" });
 
-export const TrainingCard: FunctionComponent<TrainingCardProps> = ({
-  image,
-  title,
-  details,
-  tag,
-  source,
-}) => {
-  const { setOpen } = useSliderOver();
+export const TrainingCardSimple: FunctionComponent<TrainingCardProps> = ({ training }) => {
+  const { image, title, source, details, tag } = training;
 
   return (
-    <div className="border border-zinc-200 bg-white dark:border-zinc-700/50 rounded-lg dark:bg-dark-secondary overflow-clip shadow-2xl shadow-zinc-200 dark:shadow-zinc-900">
-      <header className="h-52 border-b border-b-zinc-100 group dark:border-b-zinc-700 overflow-clip relative">
+    <div className="border border-zinc-200 bg-white dark:border-zinc-700/50 rounded-lg dark:bg-zinc-950/30 overflow-clip shadow-xl shadow-zinc-200 dark:shadow-zinc-900/20">
+      <header className="h-48 border-b border-b-zinc-100 group dark:border-b-zinc-700/80 overflow-clip relative">
         <TrainingCardContext.Provider value={{ title, source }}>
           <TrainingCardImageOverlay />
         </TrainingCardContext.Provider>
 
         <Image
+          quality={50}
           src={image ?? ""}
           alt="card-image"
-          width={500}
-          height={500}
+          width={250}
+          height={250}
           className="inline-block h-full w-full rounded-t-lg object-cover shrink-0 group-hover:scale-150 transition-all duration-1000 ease-out"
         />
       </header>
 
-      <div className="px-5 pt-4 pb-7 space-y-4">
+      <div className="px-4 pt-4 pb-5 space-y-3">
         <section>
           <span className="bg-zinc-600 dark:bg-zinc-600/60 px-2 py-1 font-medium rounded-sm text-xs text-zinc-200">
             {tag}
           </span>
         </section>
 
-        <section>
-          <p className="text-zinc-600 dark:text-zinc-300/90 leading-6 line-clamp-3 lg:line-clamp-2 xl:line-clamp-2 mb-1">
+        <section className="space-y-4">
+          <p className="text-zinc-600 dark:text-zinc-300/80 leading-5 font-medium line-clamp-3 lg:line-clamp-2 xl:line-clamp-2 mb-1">
             {details}
           </p>
-          <button
-            onClick={() => setOpen(true)}
-            className="text-indigo-500 text-sm text-right border-b border-b-indigo-500"
-          >
+          <button className="text-indigo-500 text-sm border-b border-transparent hover:border-b-indigo-500">
             Show details
           </button>
         </section>
+      </div>
+    </div>
+  );
+};
 
-        {/* <section className="text-xs text-zinc-400 space-y-1">
+const TrainingCardImageOverlay = () => {
+  const { source, title } = useContext(TrainingCardContext);
+
+  return (
+    <div className="h-full w-full z-20 bg-gradient-to-t from-zinc-700/70 dark:from-zinc-800/80 bg-opacity-20 absolute transition-colors duration-100 flex flex-col justify-between items-end">
+      <div className="pt-4 pr-4">
+        <span
+          className={`${
+            source === "Internal" ? "bg-blue-500" : "bg-orange-500"
+          } font-medium text-sm tracking-wider py-1 px-2 rounded-sm text-white`}
+        >
+          {source}
+        </span>
+      </div>
+
+      <section className="px-5 pb-3 w-full">
+        <Link
+          href="/"
+          className="text-xl font-bold leading-6 hover:underline text-white dark:text-zinc-200 line-clamp-3 lg:line-clamp-2 xl:line-clamp-2"
+        >
+          {title}
+        </Link>
+      </section>
+    </div>
+  );
+};
+
+{
+  /* <section className="text-xs text-zinc-400 space-y-1">
           <div className="flex items-center gap-1">
             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
               <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
@@ -99,35 +119,5 @@ export const TrainingCard: FunctionComponent<TrainingCardProps> = ({
             </svg>
             <p>8:00AM - 5:00PM</p>
           </div>
-        </section> */}
-      </div>
-    </div>
-  );
-};
-
-const TrainingCardImageOverlay = () => {
-  const { source, title } = useContext(TrainingCardContext);
-
-  return (
-    <div className="h-full w-full z-20 bg-gradient-to-t from-zinc-700/70 dark:from-zinc-950/90 bg-opacity-20 absolute transition-colors duration-100 flex flex-col justify-between items-end">
-      <div className="pt-2 pr-4">
-        <span
-          className={`${
-            source === "Internal" ? "bg-green-500" : "bg-orange-500"
-          } font-semibold text-xs tracking-wider px-1 rounded-sm text-white`}
-        >
-          {source}
-        </span>
-      </div>
-
-      <section className="p-4 w-full">
-        <Link
-          href="/"
-          className="text-xl font-bold leading-6 hover:underline text-white dark:text-zinc-200 line-clamp-3 lg:line-clamp-2 xl:line-clamp-2"
-        >
-          {title}
-        </Link>
-      </section>
-    </div>
-  );
-};
+        </section> */
+}
