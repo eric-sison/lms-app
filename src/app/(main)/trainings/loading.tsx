@@ -1,47 +1,22 @@
 import { TrainingCardLoader } from "@lms/components/features/training/TrainingCardLoader";
-import Link from "next/link";
 
 export default function LoadTrainingPage() {
   return (
     <div>
-      <header className="h-24 border-b dark:border-b-zinc-700 flex flex-col px-10">
+      <header className="h-[5rem] border-b dark:border-b-zinc-700 flex flex-col px-10">
         <section className="flex-1">
           <div className="h-full flex items-end space-x-5">
             <section className="flex items-start">
-              <Link
-                href="/trainings?filter=all"
-                className={` border-b-indigo-600 border-b-4 font-medium text-zinc-200 pb-3 px-2`}
-              >
-                All Trainings
-              </Link>
-              {/* <p className="bg-zinc-700 px-2 rounded-lg py-1 text-xs font-semibold">21</p> */}
+              <div className="h-5 w-32 dark:bg-zinc-700 animate-pulse mb-3 rounded" />
             </section>
             <section className="flex items-start">
-              <Link
-                href="/trainings?filter=ongoing"
-                className={`border-b-transparent border-b-4 font-medium text-zinc-200 pb-3 px-2`}
-              >
-                Ongoing
-              </Link>
-              {/* <p className="bg-zinc-700 px-2 rounded-lg py-1 text-xs font-semibold">2</p> */}
+              <div className="h-5 w-32 dark:bg-zinc-700 animate-pulse mb-3 rounded" />
             </section>
             <section className="flex items-start">
-              <Link
-                href="/trainings?filter=upcoming"
-                className={`border-b-transparent border-b-4 font-medium text-zinc-200 pb-3 px-2`}
-              >
-                Upcoming
-              </Link>
-              {/* <p className="bg-zinc-700 px-2 rounded-lg py-1 text-xs font-semibold">8</p> */}
+              <div className="h-5 w-32 dark:bg-zinc-700 animate-pulse mb-3 rounded" />
             </section>
             <section className="flex items-start">
-              <Link
-                href="/trainings?filter=completed"
-                className={`border-b-transparent border-b-4 font-medium text-zinc-200 pb-3 px-2`}
-              >
-                Completed
-              </Link>
-              {/* <p className="bg-zinc-700 px-2 rounded-lg py-1 text-xs font-semibold">11</p> */}
+              <div className="h-5 w-32 dark:bg-zinc-700 animate-pulse mb-3" />
             </section>
           </div>
         </section>
