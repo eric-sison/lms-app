@@ -1,43 +1,19 @@
 "use client";
 
+import { useLmsClient } from "@lms/components/providers/MyLmsClientProvider";
+import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { FunctionComponent } from "react";
-import { useTrainings } from "./TrainingPage";
-import { useQuery } from "@tanstack/react-query";
-import { useLmsClient } from "@lms/components/providers/MyLmsClientProvider";
 
 export const TrainingTabStatus: FunctionComponent = () => {
-  const { trainings } = useTrainings();
-
   const filter = useSearchParams().get("filter");
-
   const client = useLmsClient();
 
-  const { data: upcoming, isLoading: upcomingLoading } = useQuery({
-    queryKey: ["upcoming-count"],
+  const { data: count } = useQuery({
+    queryKey: ["training-count"],
     queryFn: async () => {
-      return await client
-        .trainingRoutes()
-        .getTrainingCountByFilter({ params: "upcoming" });
-    },
-  });
-
-  const { data: ongoing, isLoading: ongoingLoading } = useQuery({
-    queryKey: ["ongoing-count"],
-    queryFn: async () => {
-      return await client
-        .trainingRoutes()
-        .getTrainingCountByFilter({ params: "ongoing" });
-    },
-  });
-
-  const { data: completed, isLoading: completedLoading } = useQuery({
-    queryKey: ["completed-count"],
-    queryFn: async () => {
-      return await client
-        .trainingRoutes()
-        .getTrainingCountByFilter({ params: "completed" });
+      return await client.trainingRoutes().getTrainingCount();
     },
   });
 
@@ -56,7 +32,7 @@ export const TrainingTabStatus: FunctionComponent = () => {
               All Trainings
             </Link>
             <p className="border dark:border-zinc-700 dark:bg-zinc-700/80 px-2 rounded-lg py-1 text-xs font-semibold">
-              {trainings.length}
+              {count?.all}
             </p>
           </section>
           <section className="flex items-start">
@@ -69,13 +45,9 @@ export const TrainingTabStatus: FunctionComponent = () => {
             >
               Upcoming
             </Link>
-            {upcomingLoading ? (
-              <div className="ml-[0.35rem] h-5 w-5 border-4 dark:border-l-zinc-500 dark:border-y-zinc-500 border-r-transparent rounded-full animate-spin" />
-            ) : (
-              <p className="border dark:border-zinc-700 dark:bg-zinc-700/80 px-2 rounded-lg py-1 text-xs font-semibold">
-                {upcoming}
-              </p>
-            )}
+            <p className="border dark:border-zinc-700 dark:bg-zinc-700/80 px-2 rounded-lg py-1 text-xs font-semibold">
+              {count?.upcoming}
+            </p>
           </section>
           <section className="flex items-start">
             <Link
@@ -87,13 +59,9 @@ export const TrainingTabStatus: FunctionComponent = () => {
             >
               Ongoing
             </Link>
-            {ongoingLoading ? (
-              <div className="ml-[0.3rem] h-5 w-5 border-4 dark:border-l-zinc-500 dark:border-y-zinc-500 border-r-transparent rounded-full animate-spin" />
-            ) : (
-              <p className="border dark:border-zinc-700 dark:bg-zinc-700/80 px-2 rounded-lg py-1 text-xs font-semibold">
-                {ongoing}
-              </p>
-            )}
+            <p className="border dark:border-zinc-700 dark:bg-zinc-700/80 px-2 rounded-lg py-1 text-xs font-semibold">
+              {count?.ongoing}
+            </p>
           </section>
           <section className="flex items-start">
             <Link
@@ -105,13 +73,9 @@ export const TrainingTabStatus: FunctionComponent = () => {
             >
               Completed
             </Link>
-            {completedLoading ? (
-              <div className="ml-[0.35rem] h-5 w-5 border-4 dark:border-l-zinc-500 dark:border-y-zinc-500 border-r-transparent rounded-full animate-spin" />
-            ) : (
-              <p className="border dark:border-zinc-700 dark:bg-zinc-700/80 px-2 rounded-lg py-1 text-xs font-semibold">
-                {completed}
-              </p>
-            )}
+            <p className="border dark:border-zinc-700 dark:bg-zinc-700/80 px-2 rounded-lg py-1 text-xs font-semibold">
+              {count?.completed}
+            </p>
           </section>
         </div>
       </section>

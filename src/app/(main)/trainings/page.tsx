@@ -1,10 +1,20 @@
-import { LmsClient } from "@lms/_sdk/client/LmsClient";
-import { TrainingPage } from "@lms/components/features/training/TrainingPage";
+import { TrainingCardGrid } from "@lms/components/features/training/TrainingCardGrid";
+import { TrainingTabStatus } from "@lms/components/features/training/TrainingTabStatus";
+import { PageProps } from "@lms/types/pageProps";
+import { redirect } from "next/navigation";
 
-const client = LmsClient.getInstance();
+export default async function Trainings({ searchParams }: PageProps) {
+  if (searchParams?.filter === undefined || searchParams?.filter === "")
+    redirect("/trainings/?filter=all");
 
-export default async function Trainings() {
-  const trainings = await client.trainingRoutes().getAllTrainings();
+  return (
+    <>
+      <TrainingTabStatus />
 
-  return <TrainingPage trainings={trainings} />;
+      <main className="px-10 pt-10 space-y-5">
+        {/* <TrainingSourceDropdownMenu /> */}
+        <TrainingCardGrid />
+      </main>
+    </>
+  );
 }
