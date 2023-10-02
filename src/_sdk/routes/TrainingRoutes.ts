@@ -1,6 +1,7 @@
 import axios, { AxiosRequestConfig } from "axios";
 import { Training } from "@lms/types/training";
 import { SdkUtilities } from "../utils/SdkUtilities";
+import { TrainingCountPerStatus } from "../types/Training";
 
 export class TrainingRoutes {
   private static instance: TrainingRoutes;
@@ -19,8 +20,13 @@ export class TrainingRoutes {
     return (await axios.get<Training[]>(`${url}`, config)).data;
   }
 
-  async getTrainingCountByFilter(options?: UrlOptions, config?: AxiosRequestConfig<any>) {
+  async getFilteredTrainings(options?: UrlOptions, config?: AxiosRequestConfig<any>) {
+    const url = this.sdkUtils.modifyUrl("trainings/filter", options);
+    return (await axios.get<Training[]>(`${url}`, config)).data;
+  }
+
+  async getTrainingCount(options?: UrlOptions, config?: AxiosRequestConfig<any>) {
     const url = this.sdkUtils.modifyUrl("trainings/count", options);
-    return (await axios.get<number>(`${url}`, config)).data;
+    return (await axios.get<TrainingCountPerStatus>(`${url}`, config)).data;
   }
 }
