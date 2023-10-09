@@ -7,6 +7,8 @@ import { TrainingDetailsAttachments } from "./TrainingDetailsAttachments";
 import { TrainingDetailsCourseDescription } from "./TrainingDetailsCourseDescription";
 import { TrainingDetailsCourseOutline } from "./TrainingDetailsCourseOutline";
 import { TrainingDetailsHeader } from "./TrainingDetailsHeader";
+import { DataTable } from "@lms/components/primitives/DataTable";
+import { TrainingParticipants } from "./TrainingParticipants";
 
 export const TrainingDetailsPageManager: FunctionComponent = () => {
   const tab = useTrainingDetailsTab((state) => state.tab);
@@ -25,7 +27,11 @@ export const TrainingDetailsPageManager: FunctionComponent = () => {
           </>
         )}
 
-        {tab === "participants" && <>Participants</>}
+        {tab === "participants" && (
+          <>
+            <TrainingParticipants />
+          </>
+        )}
 
         {tab === "requirements" && <>Requirements</>}
 
