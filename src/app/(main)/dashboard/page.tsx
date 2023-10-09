@@ -1,4 +1,5 @@
 import { LmsClient } from "@lms/_sdk/client/LmsClient";
+import { Testing } from "@lms/components/features/training/Testing";
 
 export default async function Dashboard() {
   // const client = LmsClient.getInstance();
@@ -19,5 +20,9 @@ export default async function Dashboard() {
   //   ],
   // });
 
-  return <>Dashboard</>;
+  return (
+    <>
+      <Testing />
+    </>
+  );
 }

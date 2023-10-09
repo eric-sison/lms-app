@@ -1,7 +1,7 @@
 import { MyThemeProvider } from "@lms/components/providers/MyThemeProvider";
 import "../styles/tailwind.css";
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Inter } from "next/font/google";
 import { MyQueryProvider } from "@lms/components/providers/MyQueryProvider";
 import { MyLmsClientProvider } from "@lms/components/providers/MyLmsClientProvider";
 

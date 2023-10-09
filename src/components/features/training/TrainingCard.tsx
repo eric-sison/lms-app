@@ -42,24 +42,32 @@ export const TrainingCard: FunctionComponent<TrainingCardProps> = ({ training })
               alt=""
               width={200}
               height={200}
-              className="h-16 w-16 rounded-full shrink-0 object-cover"
+              className="h-12 w-12 rounded-full shrink-0 object-cover"
             />
             <div className="space-y-2">
-              <Link
-                title={title}
-                href="/trainings/details"
-                className="text-xl font-bold leading-6 hover:underline text-white dark:text-zinc-200 line-clamp-2 pr-3"
-              >
-                {title}
-              </Link>
+              <section className="pb-1">
+                <span className="bg-zinc-600 dark:bg-zinc-600/60 px-2 py-1 font-medium rounded-sm text-md text-zinc-200">
+                  {tag}
+                </span>
+              </section>
 
-              <TrainingCardScheduleDetails />
+              <div className="space-y-1">
+                <Link
+                  title={title}
+                  href="/trainings/details"
+                  className="text-xl font-bold leading-6 hover:underline text-white dark:text-zinc-200 line-clamp-2 pr-3"
+                >
+                  {title}
+                </Link>
+
+                <TrainingCardScheduleDetails />
+              </div>
             </div>
           </div>
 
           {/* <TrainingCardScheduleDetails /> */}
 
-          <div className="space-y-2">
+          {/* <div className="space-y-2">
             <section className="pb-1">
               <span className="bg-zinc-600 dark:bg-zinc-600/60 px-2 py-1 font-medium rounded-sm text-xs text-zinc-200">
                 {tag}
@@ -71,7 +79,7 @@ export const TrainingCard: FunctionComponent<TrainingCardProps> = ({ training })
             <button className="text-indigo-500 text-sm border-b border-transparent hover:border-b-indigo-500">
               Show details
             </button>
-          </div>
+          </div> */}
         </section>
       </div>
     </div>
@@ -84,11 +92,7 @@ const TrainingCardImageOverlay = () => {
   return (
     <div className="h-full w-full z-20 bg-gradient-to-t from-zinc-700/70 dark:from-zinc-800/50 absolute transition-colors duration-100 flex flex-col justify-between items-end">
       <div className="pt-4 pr-4">
-        <span
-          className={`${
-            source === "Internal" ? "bg-blue-500" : "bg-orange-500"
-          } font-medium text-sm tracking-wider py-1 px-2 rounded-sm text-white`}
-        >
+        <span className="bg-zinc-900 font-medium text-sm tracking-wider py-1 px-2 rounded-md text-white">
           {source}
         </span>
       </div>
@@ -98,12 +102,12 @@ const TrainingCardImageOverlay = () => {
 
 const TrainingCardScheduleDetails = () => {
   return (
-    <section className="text-xs dark:text-zinc-100 flex gap-2">
-      <div className="flex items-center gap-2 max-w-sm">
+    <section className="text-md dark:text-zinc-100 flex gap-2">
+      {/* <div className="flex items-center gap-2 max-w-sm">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="1.25em"
-          height="1.25em"
+          width="1em"
+          height="1em"
           viewBox="0 0 24 24"
           className="dark:text-zinc-400"
         >
@@ -113,16 +117,16 @@ const TrainingCardScheduleDetails = () => {
           ></path>
         </svg>
 
-        <p className="truncate dark:text-zinc-400">Training Hall</p>
+        <p className="truncate dark:text-zinc-400 max-w-[8rem]">Training Hall</p>
       </div>
 
-      <p className="dark:text-zinc-600">|</p>
+      <p className="dark:text-zinc-600">|</p> */}
 
       <div className="flex items-center gap-2 max-w-sm">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="1.25em"
-          height="1.25em"
+          width="1em"
+          height="1em"
           viewBox="0 0 24 24"
           className="dark:text-zinc-400"
         >
@@ -133,7 +137,7 @@ const TrainingCardScheduleDetails = () => {
             clipRule="evenodd"
           ></path>
         </svg>
-        <p className="truncate dark:text-zinc-400">Aug 24 - 25, 2023</p>
+        <p className="dark:text-zinc-400 w-fit font-medium">Aug 24 - 25, 2023</p>
       </div>
     </section>
   );

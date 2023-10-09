@@ -12,7 +12,6 @@ export default async function Trainings({ searchParams }: PageProps) {
       <TrainingTabStatus />
 
       <main className="px-10 pt-10 space-y-5">
-        {/* <TrainingSourceDropdownMenu /> */}
         <TrainingCardGrid />
       </main>
     </>
