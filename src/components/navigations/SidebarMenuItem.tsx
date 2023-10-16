@@ -35,7 +35,7 @@ export const SidebarMenuItem: FunctionComponent<SidebarMenuItemProps> = ({
         role="menuitem"
         href={path}
         className={`${
-          pathName === path && "bg-dark-tertiary"
+          pathName.includes(path) && "bg-dark-tertiary"
         } flex items-center justify-between hover:bg-dark-tertiary pl-1 pr-4 rounded-md`}
       >
         <SidebarMenuIndicator />
@@ -57,7 +57,7 @@ const SidebarMenuIndicator: FunctionComponent = () => {
   return (
     <div
       className={`${
-        currentPath === targetPath ? "bg-indigo-600" : " bg-transparent"
+        currentPath.includes(targetPath) ? "bg-indigo-600" : " bg-transparent"
       } w-[0.35rem] h-4 bg-indigo-600 rounded`}
     />
   );

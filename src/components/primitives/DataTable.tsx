@@ -68,15 +68,15 @@ export const DataTable = <T extends unknown>({
 
   return (
     <>
-      <div className="w-full border">
-        <table className="border w-full">
-          <thead>
+      <div className="w-full">
+        <table className="w-full">
+          <thead className="text-left">
             {table.getHeaderGroups().map((group) => {
               return (
-                <tr key={group.id}>
+                <tr key={group.id} className="">
                   {group.headers.map((header) => {
                     return (
-                      <th key={header.id} scope="col" className="py-5 px-6">
+                      <th key={header.id} scope="col" className="">
                         {header.isPlaceholder ? null : (
                           <div
                             {...{

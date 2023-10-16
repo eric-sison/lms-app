@@ -20,9 +20,5 @@ export default async function Dashboard() {
   //   ],
   // });
 
-  return (
-    <>
-      <Testing />
-    </>
-  );
+  return <>{/* <Testing /> */}</>;
 }

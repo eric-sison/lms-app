@@ -18,13 +18,29 @@ const storage = new Appwrite.Storage(client);
 
 // const storage = new sdk.Storage(client);
 
+type BucketFile = {
+  id: string;
+  name: string;
+  href: string;
+  sizeOriginal: string;
+  mimeType: string;
+};
+
+const bucketFiles: BucketFile[] = [
+  { id: "123", name: "test1", href: "/", sizeOriginal: "200KiB", mimeType: "PNG" },
+  { id: "456", name: "test2", href: "/", sizeOriginal: "200KiB", mimeType: "PNG" },
+  { id: "789", name: "test3", href: "/", sizeOriginal: "200KiB", mimeType: "PNG" },
+  { id: "012", name: "test4", href: "/", sizeOriginal: "200KiB", mimeType: "PNG" },
+];
+
 export const Testing: FunctionComponent = () => {
-  const [file, setFile] = useState<FileList | null>(null);
-  const [preview, setPreview] = useState<string | undefined>(undefined);
+  // const [file, setFile] = useState<FileList | null>(null);
+  // const [preview, setPreview] = useState<string | undefined>(undefined);
+  const [ids, setIds] = useState<string[]>([]);
 
   return (
     <div className="h-full w-full flex items-center justify-center">
-      <div className="flex flex-col gap-5">
+      {/* <div className="flex flex-col gap-5">
         <input type="file" onChange={(e) => setFile(e.target.files)} />
         <button
           className="bg-indigo-600 px-3 py-2"
@@ -66,6 +82,20 @@ export const Testing: FunctionComponent = () => {
           width={100}
           height={100}
         />
+      </div> */}
+
+      <div className="flex flex-col">
+        <button
+          onClick={() => {
+            const myIds = bucketFiles.map((file) => file.id);
+            console.log(myIds);
+            //setIds(myIds);
+          }}
+        >
+          Test
+        </button>
+
+        <button onClick={() => console.log(ids)}>Log Ids</button>
       </div>
     </div>
   );

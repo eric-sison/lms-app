@@ -29,4 +29,14 @@ export class TrainingRoutes {
     const url = this.sdkUtils.modifyUrl("trainings/count", options);
     return (await axios.get<TrainingCountPerStatus>(`${url}`, config)).data;
   }
+
+  async getAllBuckets(options?: UrlOptions, config?: AxiosRequestConfig<any>) {
+    const url = this.sdkUtils.modifyUrl("trainings/buckets", options);
+    return (await axios.get<{ id: string; name: string }[]>(`${url}`, config)).data;
+  }
+
+  // async createFolder(options?: UrlOptions, config?: AxiosRequestConfig<any>) {
+  //   const url = this.sdkUtils.modifyUrl("trainings/bucket", options);
+  //   return (await axios.post(`${url}`, config)).data;
+  // }
 }

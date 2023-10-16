@@ -143,20 +143,20 @@ export const Sidebar: FunctionComponent = () => {
         <SidebarMenuGroup header="Requirements">
           <SidebarMenuItem
             icon={<CourseMaterialsSidebarItemIcon />}
-            path={"/"}
+            path={"/materials"}
             label={"Course Materials"}
             counter={undefined}
           />
 
           <SidebarMenuItem
             icon={<TrainingReportsSidebarItemIcon />}
-            path="/"
+            path="/reports"
             label="Training Reports"
           />
 
           <SidebarMenuItem
             icon={<CertificateSidebarItemIcon />}
-            path={"/"}
+            path={"/certificates"}
             label={"Certificates"}
             counter={12}
           />

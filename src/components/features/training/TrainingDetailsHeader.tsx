@@ -25,7 +25,7 @@ export const TrainingDetailsHeader: FunctionComponent = () => {
 
           <div className="">
             <div className="flex items-center gap-2">
-              <p className="dark:text-zinc-500 font-medium line-clamp-1">
+              <p className="dark:text-zinc-400 font-medium line-clamp-1">
                 General Santos City Water District - Training Hall, E. Fernandez St.,
                 Lagao, General Santos City
               </p>
@@ -33,9 +33,9 @@ export const TrainingDetailsHeader: FunctionComponent = () => {
 
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-2 font-medium">
-                <p className="dark:text-zinc-500">August 23 - 25, 2023</p>
-                <p className="dark:text-zinc-700">|</p>
-                <p className="dark:text-zinc-500">8:00AM - 5:00PM</p>
+                <p className="dark:text-zinc-400">August 23 - 25, 2023</p>
+                <p className="dark:text-zinc-600">|</p>
+                <p className="dark:text-zinc-400">8:00AM - 5:00PM</p>
               </div>
             </div>
           </div>

@@ -54,7 +54,7 @@ export const TrainingCard: FunctionComponent<TrainingCardProps> = ({ training })
               <div className="space-y-1">
                 <Link
                   title={title}
-                  href="/trainings/details"
+                  href="/trainings/details?pos=details"
                   className="text-xl font-bold leading-6 hover:underline text-white dark:text-zinc-200 line-clamp-2 pr-3"
                 >
                   {title}

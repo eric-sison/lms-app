@@ -18,7 +18,7 @@ export const TrainingTabStatus: FunctionComponent = () => {
   });
 
   return (
-    <header className="border-b h-[5rem] dark:border-b-zinc-700 flex flex-col px-10">
+    <header className="border-b h-[5rem] dark:border-b-zinc-700/50 flex flex-col px-10 dark:bg-zinc-900/30">
       <section className="flex-1">
         <div className="h-full flex items-end space-x-5">
           <section className="flex items-start">
@@ -27,7 +27,7 @@ export const TrainingTabStatus: FunctionComponent = () => {
               href="/trainings?filter=all"
               className={`${
                 filter === "all" ? " border-b-indigo-600" : " border-b-transparent"
-              } border-b-4 font-medium text-zinc-200 pb-3 px-2`}
+              } border-b-4 text-lg font-medium text-zinc-200 pb-3 px-2`}
             >
               All Trainings
             </Link>
@@ -41,7 +41,7 @@ export const TrainingTabStatus: FunctionComponent = () => {
               href="/trainings?filter=upcoming"
               className={`${
                 filter === "upcoming" ? " border-b-indigo-600" : " border-b-transparent"
-              } border-b-4 font-medium text-zinc-200 pb-3 px-2`}
+              } border-b-4 text-lg font-medium text-zinc-200 pb-3 px-2`}
             >
               Upcoming
             </Link>
@@ -55,7 +55,7 @@ export const TrainingTabStatus: FunctionComponent = () => {
               href="/trainings?filter=ongoing"
               className={`${
                 filter === "ongoing" ? " border-b-indigo-600" : " border-b-transparent"
-              } border-b-4 font-medium text-zinc-200 pb-3 px-2`}
+              } border-b-4 text-lg font-medium text-zinc-200 pb-3 px-2`}
             >
               Ongoing
             </Link>
@@ -69,7 +69,7 @@ export const TrainingTabStatus: FunctionComponent = () => {
               href="/trainings?filter=completed"
               className={`${
                 filter === "completed" ? " border-b-indigo-600" : " border-b-transparent"
-              } border-b-4 font-medium text-zinc-200 pb-3 px-2`}
+              } border-b-4 text-lg font-medium text-zinc-200 pb-3 px-2`}
             >
               Completed
             </Link>

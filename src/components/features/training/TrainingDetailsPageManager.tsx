@@ -1,30 +1,30 @@
 "use client";
 
-import { useTrainingDetailsTab } from "@lms/utils/zustand/trainingDetailsTabStore";
 import { FunctionComponent } from "react";
 import { TrainingDetailsTab } from "./TrainingDetailsTab";
 import { TrainingDetailsAttachments } from "./TrainingDetailsAttachments";
 import { TrainingDetailsCourseDescription } from "./TrainingDetailsCourseDescription";
 import { TrainingDetailsCourseOutline } from "./TrainingDetailsCourseOutline";
 import { TrainingDetailsHeader } from "./TrainingDetailsHeader";
-import { DataTable } from "@lms/components/primitives/DataTable";
 import { TrainingParticipants } from "./TrainingParticipants";
+import { TrainingMaterials } from "./TrainingMaterials";
+import { useSearchParams } from "next/navigation";
 
 export const TrainingDetailsPageManager: FunctionComponent = () => {
-  const tab = useTrainingDetailsTab((state) => state.tab);
+  const tab = useSearchParams().get("pos");
 
   return (
     <>
       <TrainingDetailsTab />
 
-      <div className="p-5 md:p-10 lg:p-12">
+      <div>
         {tab === "details" && (
-          <>
+          <div className="p-5 md:p-10 lg:p-12">
             <TrainingDetailsHeader />
             <TrainingDetailsCourseDescription />
             <TrainingDetailsCourseOutline />
-            <TrainingDetailsAttachments />
-          </>
+            {/* <TrainingDetailsAttachments /> */}
+          </div>
         )}
 
         {tab === "participants" && (
@@ -35,7 +35,11 @@ export const TrainingDetailsPageManager: FunctionComponent = () => {
 
         {tab === "requirements" && <>Requirements</>}
 
-        {tab === "materials" && <>Course Materials</>}
+        {tab === "materials" && (
+          <>
+            <TrainingMaterials />
+          </>
+        )}
       </div>
     </>
   );
